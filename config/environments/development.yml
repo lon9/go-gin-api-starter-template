@@ -1,0 +1,9 @@
+environment: "development"
+db:
+    provider: "sqlite3"
+    url: "database/db/dev.db"
+server:
+    version: "v1"
+    port: "3001"
+    cors:
+        - "http://localhost:3000"

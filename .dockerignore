@@ -1,0 +1,6 @@
+.gitignore
+config/environments
+fixtures
+{{ .ProjectName }}
+go-gin-api-starter
+database/db
