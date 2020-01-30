@@ -1,9 +1,6 @@
 package server
 
 import (
-	"net/http"
-
-
 	"github.com/gin-gonic/gin"
 	"github.com/gin-contrib/cors"
 	"{{ .ProjectPath }}/config"
@@ -11,13 +8,13 @@ import (
 )
 
 // NewRouter is constructor for router
-func NewRouter() (*echo.Echo, error) {
+func NewRouter() (*gin.Engine, error) {
 	c := config.GetConfig()
 	router := gin.New()
 	router.Use(gin.Logger())
 	router.Use(gin.Recovery())
 	router.Use(cors.New(cors.Config{
-		AllowOrigins: cfg.GetStringSlice("server.cors"),
+		AllowOrigins: c.GetStringSlice("server.cors"),
 		AllowMethods: []string{"GET", "POST", "PUT", "DELETE"},
 	}))
 
