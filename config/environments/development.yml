@@ -1,6 +1,6 @@
 environment: "development"
 db:
-    provider: "sqlite3"
+    provider: "sqlite"
     url: "database/db/dev.db"
 server:
     version: "v1"
